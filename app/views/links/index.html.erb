@@ -1,0 +1,13 @@
+<header>List of links</header>
+
+<table>
+  <tr>
+    <td>Link location:</td>
+    <td>ID</td>
+  </tr>
+<% @links.each do |link| %>
+  <tr>
+    <td><%= link.location %></td>
+    <td><%= link.id %></td>
+  </tr>
+<% end %>

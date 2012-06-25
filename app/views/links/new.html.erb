@@ -1,0 +1,16 @@
+<title>New Link</title>
+
+<header>Create a new link</header>
+
+<%= form_for(@link) do |f| %>
+  <div>
+    <%= f.label "URL" %>
+    <%= f.text_field :location %>
+  </div> 
+
+  <div>
+    <%= f.submit "Create Link!" %>
+  </div>
+
+<% end %>
+
