@@ -31,4 +31,9 @@ class LinksController < ApplicationController
     link.update_attributes(params[:link])
     redirect_to root_path
   end
+
+  def show
+    @location = Link.find_by_id(params[:id]).location
+    redirect_to @location
+  end
 end

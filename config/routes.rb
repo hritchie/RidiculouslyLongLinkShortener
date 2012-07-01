@@ -1,7 +1,7 @@
 RidiculouslyLongLinkShortener::Application.routes.draw do
 
   root :to => "links#index"
-  resources :links, only: [:new, :create, :index, :destroy, :edit, :update]
+  resources :links
   
 
 
