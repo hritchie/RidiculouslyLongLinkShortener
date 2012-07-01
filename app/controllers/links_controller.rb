@@ -21,4 +21,14 @@ class LinksController < ApplicationController
     link.delete
     redirect_to root_path
   end
+
+  def edit
+    @link = Link.find_by_id(params[:id])
+  end
+
+  def update
+    link = Link.find_by_id(params[:id])
+    link.update_attributes(params[:link])
+    redirect_to root_path
+  end
 end
