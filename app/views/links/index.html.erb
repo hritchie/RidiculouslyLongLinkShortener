@@ -7,8 +7,12 @@
   </tr>
 <% @links.each do |link| %>
   <tr>
-    <td><%= link.location %></td>
     <td><%= link.id %></td>
+    <td><%= link.location %></td>
+    <td><%= link.shortcode %></td>
+    <td><%= link_to "update", edit_link_path(link) %></td>
     <td><%= link_to "delete", link, method: :delete %></td>
   </tr>
 <% end %>
+
+<%= button_to "Add a new link", new_link_path %>

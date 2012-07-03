@@ -1,0 +1,13 @@
+<%= form_for(@link) do |f| %>
+  <div>
+    <%= f.label "URL:" %>
+    <%= f.text_field :location %>
+    <br />
+    <%= f.label "Shortcode:" %>
+    <%= f.text_field :shortcode %>
+  </div> 
+
+  <div>
+    <%= f.submit @button_label %>
+  </div>
+<% end %>

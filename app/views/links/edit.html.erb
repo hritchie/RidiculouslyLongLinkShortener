@@ -1,12 +1,5 @@
 <header>Edit Link</header>
 
-<%= form_for(@link) do |f| %>
-  <div>
-    <%= f.label "URL" %>
-    <%= f.text_field :location %>
-  </div> 
+<% @button_label = "Edit Link!" %>
 
-  <div>
-    <%= f.submit "Edit Link!" %>
-  </div>
-<% end %>
+<%= render "link_form" %> 
