@@ -8,8 +8,8 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.new(params[:link])
-    if link.save
+    @link = Link.new(params[:link])
+    if @link.save
       redirect_to links_path
     else
       render 'new'
