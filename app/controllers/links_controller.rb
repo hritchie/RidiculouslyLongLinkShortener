@@ -33,7 +33,7 @@ class LinksController < ApplicationController
   end
 
   def show
-    @location = Link.find_by_id(params[:id]).location
-    redirect_to @location
+    link = Link.find_by_shortcode(params[:shortcode])
+    link ? (redirect_to link.location) : (redirect_to root_path)
   end
 end
