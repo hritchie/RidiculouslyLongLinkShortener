@@ -2,8 +2,8 @@ require 'test_helper'
 
 class LinkTest < ActiveSupport::TestCase
   test "create a link" do
-    @link = Link.new location: 'rails is awesome'
-    assert @link
+    @link = Link.new location: 'http://www.bostonrb.org', shortcode: 'sc'
+    assert @link.valid?
   end
 
   test "link must have location" do
@@ -12,12 +12,12 @@ class LinkTest < ActiveSupport::TestCase
   end
 
   test "link must have shortcode" do
-    @link = Link.new location: 'loco'
+    @link = Link.new location: 'http://www.example.com'
     assert @link.invalid?, "link must have shortcode"
   end
 
-  test "valid link should be valid" do
-    @link = Link.new location: 'loco', shortcode: 'codeshort'
-    assert @link.valid?, "valid link should be valid"
+  test "location must be valid url" do
+    
   end
+
 end
