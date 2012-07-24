@@ -5,6 +5,7 @@ class LinksController < ApplicationController
 
   def new 
     @link = Link.new
+    @button_label = "Create Link!" 
   end
 
   def create
@@ -12,7 +13,8 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to links_path
     else
-      render 'new'
+      flash.now[:error] = "Invalid link/shortcode combination."
+      render :new
     end
   end
 
@@ -24,12 +26,17 @@ class LinksController < ApplicationController
 
   def edit
     @link = Link.find_by_id(params[:id])
+    @button_label = "Edit Link!" 
   end
 
   def update
-    link = Link.find_by_id(params[:id])
-    link.update_attributes(params[:link])
-    redirect_to root_path
+    @link = Link.find_by_id(params[:id])
+    if @link.update_attributes(params[:link])
+      redirect_to root_path
+    else
+      flash.now[:error] = "Invalid link/shortcode combination."
+      render :edit
+    end
   end
 
   def show
