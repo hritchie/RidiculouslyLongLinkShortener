@@ -11,7 +11,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(params[:link])
     if @link.save
-      redirect_to links_path
+      redirect_to root_path
     else
       flash.now[:error] = "Invalid link/shortcode combination."
       render :new
